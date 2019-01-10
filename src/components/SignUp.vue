@@ -24,6 +24,10 @@
             <span class="text-danger" v-if="isValidPhone">Please enter 10 digits no without zero</span>
           </div>
           <div class="mb-md">
+            <label for="class">Class</label>
+            <Select :changeValue="(event) => {getInput(event, 'class')}" :classList="className"></Select>
+          </div>
+          <div class="mb-md">
             <label for="email">Email*</label>
             <Input
               inputType="text"
@@ -93,7 +97,9 @@
 .main-wrapper {
   width: 50%;
   padding: 15px;
-  margin: 0 auto;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 80px;
   background: #cccccc26;
   box-shadow: 0px 1px 4px 2px #92929229;
 }

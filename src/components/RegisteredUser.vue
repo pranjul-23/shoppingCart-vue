@@ -3,6 +3,7 @@
     <div v-for="(item, index) in userData" :key="index" class="user-box">
       <p>Name: {{item.name}}</p>
       <p>Phone: {{item.phone}}</p>
+      <p>Class: {{item.class}}</p>
       <p>Email: {{item.email}}</p>
       <img :src="item.url" alt="description" class="image-box" v-if="item.url.length">
     </div>

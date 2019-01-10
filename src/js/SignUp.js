@@ -3,6 +3,7 @@ import Button from '@/components/Button'
 import router from '../router'
 import Modal from '@/components/Modal'
 import { mapGetters } from 'vuex'
+import Select from '@/components/Select'
 
 export default {
   name: 'SignUp',
@@ -20,7 +21,9 @@ export default {
       isPassword: false,
       isConfirmPassword: false,
       isValidEmail: false,
-      isModalVisible: false
+      isModalVisible: false,
+      className: ['A', 'B', 'C', 'XII'],
+      class: 'A'
     }
   },
   methods: {
@@ -35,6 +38,8 @@ export default {
         this.password = e.target.value
       } else if (field === 'confirmPassword') {
         this.confirmPassword = e.target.value
+      } else if (field === 'class') {
+        this.class = e.target.value
       } else {
         this.url = e.target.value
       }
@@ -87,7 +92,8 @@ export default {
         email: this.email,
         password: this.password,
         confirmPassword: this.confirmPassword,
-        url: this.url
+        url: this.url,
+        class: this.class
       }
       if (this.validateForm()) {
         this.showModal()
@@ -123,5 +129,5 @@ export default {
       msgForUser: 'getMsgForUser'
     })
   },
-  components: { Input, Button, Modal }
+  components: { Input, Button, Modal, Select }
 }
